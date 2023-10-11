@@ -7,9 +7,9 @@ build/
 /captures
 .externalNativeBuild
 .cxx
-iosApp/Podfile.lock
-iosApp/Pods/*
-iosApp/iosApp.xcworkspace/*
-iosApp/iosApp.xcodeproj/*
-!iosApp/iosApp.xcodeproj/project.pbxproj
+sample/iosApp/Podfile.lock
+sample/iosApp/Pods/*
+sample/iosApp/iosApp.xcworkspace/*
+sample/iosApp/iosApp.xcodeproj/*
+!sample/iosApp/iosApp.xcodeproj/project.pbxproj
 shared/shared.podspec
