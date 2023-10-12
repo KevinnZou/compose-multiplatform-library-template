@@ -1,12 +1,17 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("org.jetbrains.compose")
     id("org.jetbrains.dokka")
+    id("com.vanniktech.maven.publish")
 }
 
 kotlin {
-    androidTarget()
+    androidTarget() {
+        publishLibraryVariants("release")
+    }
 
     jvm("desktop")
 
@@ -70,5 +75,39 @@ android {
     }
     kotlin {
         jvmToolchain(17)
+    }
+}
+
+mavenPublishing {
+//    publishToMavenCentral(SonatypeHost.DEFAULT)
+    // or when publishing to https://s01.oss.sonatype.org
+    publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+    signAllPublications()
+    coordinates("com.example.mylibrary", "mylibrary-runtime", "1.0.0")
+
+    pom {
+        name.set(project.name)
+        description.set("A description of what my library does.")
+        inceptionYear.set("2023")
+        url.set("https://github.com/username/mylibrary/")
+        licenses {
+            license {
+                name.set("The Apache License, Version 2.0")
+                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+            }
+        }
+        developers {
+            developer {
+                id.set("username")
+                name.set("User Name")
+                url.set("https://github.com/username/")
+            }
+        }
+        scm {
+            url.set("https://github.com/username/mylibrary/")
+            connection.set("scm:git:git://github.com/username/mylibrary.git")
+            developerConnection.set("scm:git:ssh://git@github.com/username/mylibrary.git")
+        }
     }
 }
