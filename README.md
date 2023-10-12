@@ -9,6 +9,7 @@ and contains the following changes:
 * Move the androidApp, desktopApp, and iosApp modules to the `samples` folder.
 * Apply the `org.jetbrains.dokka` plugin to generate documentation for the library code.
 * Set up a GitHub Action to publish the documentation to GitHub Pages.
+* Apply the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
 
 > **Note**
 > The iOS part of Compose Multiplatform is in Alpha. It may change incompatibly and require manual migration in the
@@ -23,6 +24,60 @@ The result will be a [Kotlin Multiplatform](https://kotlinlang.org/docs/multipla
 Compose Multiplatform UI framework.
 
 <img src="readme_images/banner.png" height="350">
+
+## Maven Publish
+This template applies the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
+
+### Configuring
+To publish your library properly, you need to configure the necessary information in `mavenPublishing` block in `build.gradle.kts`
+```kotlin
+mavenPublishing {
+    // publishToMavenCentral(SonatypeHost.DEFAULT)
+    // or when publishing to https://s01.oss.sonatype.org
+    publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+    signAllPublications()
+    coordinates("com.example.mylibrary", "mylibrary-runtime", "1.0.0")
+
+    pom {
+        name.set(project.name)
+        description.set("A description of what my library does.")
+        inceptionYear.set("2023")
+        url.set("https://github.com/username/mylibrary/")
+        licenses {
+            license {
+                name.set("The Apache License, Version 2.0")
+                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+            }
+        }
+        developers {
+            developer {
+                id.set("username")
+                name.set("User Name")
+                url.set("https://github.com/username/")
+            }
+        }
+        scm {
+            url.set("https://github.com/username/mylibrary/")
+            connection.set("scm:git:git://github.com/username/mylibrary.git")
+            developerConnection.set("scm:git:ssh://git@github.com/username/mylibrary.git")
+        }
+    }
+}
+```
+
+### Secrets
+For the publishing to work the credentials for Sonatype OSS as well as for the GPG key that is used for signing need to provided. To keep them out of version control it is recommended to either put this into the gradle.properties file user home or to use environment variables for publishing from CI servers.
+```kotlin
+mavenCentralUsername=username
+mavenCentralPassword=the_password
+
+signing.keyId=12345678
+signing.password=some_password
+signing.secretKeyRingFile=/Users/yourusername/.gnupg/secring.gpg
+```
+
+Please visit https://vanniktech.github.io/gradle-maven-publish-plugin/central/#configuring-maven-central for detailed instructions.
 
 ## Set up the environment
 
