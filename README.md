@@ -1,6 +1,6 @@
 [![official project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-# [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) library
+# [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) Library
 
 This is a template for a [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform#readme) **library** targeting desktop,
 Android, and iOS. It is built on top of the [Compose Multiplatform Template](https://github.com/JetBrains/compose-multiplatform-template)
