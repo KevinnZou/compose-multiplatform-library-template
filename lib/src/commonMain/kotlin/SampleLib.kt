@@ -1,0 +1,2 @@
+
+expect fun getPlatformName(): String
