@@ -1,6 +1,14 @@
 [![official project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-# [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) application
+# [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) library
+
+This is a template for a [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform#readme) **library** targeting desktop,
+Android, and iOS. It is built on top of the [Compose Multiplatform Template](https://github.com/JetBrains/compose-multiplatform-template)
+and contains the following changes:
+* Add a `lib` module for the shared library code.
+* Move the androidApp, desktopApp, and iosApp modules to the `samples` folder.
+* Apply the `org.jetbrains.dokka` plugin to generate documentation for the library code.
+* Set up a GitHub Action to publish the documentation to GitHub Pages.
 
 > **Note**
 > The iOS part of Compose Multiplatform is in Alpha. It may change incompatibly and require manual migration in the
@@ -8,7 +16,7 @@
 > If you have any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
 You can use this template to start developing your
-own [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform#readme) application targeting desktop,
+own [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform#readme) library targeting desktop,
 Android, and iOS.
 Follow our tutorial below to get your first Compose Multiplatform app up and running.
 The result will be a [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) project that uses the
