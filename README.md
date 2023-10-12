@@ -11,20 +11,6 @@ and contains the following changes:
 * Set up a GitHub Action to publish the documentation to GitHub Pages.
 * Apply the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
 
-> **Note**
-> The iOS part of Compose Multiplatform is in Alpha. It may change incompatibly and require manual migration in the
-> future.
-> If you have any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
-
-You can use this template to start developing your
-own [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform#readme) library targeting desktop,
-Android, and iOS.
-Follow our tutorial below to get your first Compose Multiplatform app up and running.
-The result will be a [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) project that uses the
-Compose Multiplatform UI framework.
-
-<img src="readme_images/banner.png" height="350">
-
 ## Maven Publish
 This template applies the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
 
@@ -78,6 +64,20 @@ signing.secretKeyRingFile=/Users/yourusername/.gnupg/secring.gpg
 ```
 
 Please visit https://vanniktech.github.io/gradle-maven-publish-plugin/central/#configuring-maven-central for detailed instructions.
+
+> **Note**
+> The iOS part of Compose Multiplatform is in Alpha. It may change incompatibly and require manual migration in the
+> future.
+> If you have any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
+
+You can use this template to start developing your
+own [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform#readme) library targeting desktop,
+Android, and iOS.
+Follow our tutorial below to get your first Compose Multiplatform app up and running.
+The result will be a [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) project that uses the
+Compose Multiplatform UI framework.
+
+<img src="readme_images/banner.png" height="350">
 
 ## Set up the environment
 
