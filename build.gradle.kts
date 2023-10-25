@@ -9,3 +9,13 @@ plugins {
     id("org.jetbrains.dokka")
     id("org.jlleitschuh.gradle.ktlint")
 }
+
+subprojects {
+    apply(plugin = "org.jlleitschuh.gradle.ktlint") // Version should be inherited from parent
+
+    // Optionally configure plugin
+    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+        version.set("0.47.0")
+        disabledRules.set(setOf("filename"))
+    }
+}
