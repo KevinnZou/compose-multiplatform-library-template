@@ -6,6 +6,7 @@ plugins {
     id("org.jetbrains.compose")
     id("org.jetbrains.dokka")
     id("com.vanniktech.maven.publish")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 kotlin {

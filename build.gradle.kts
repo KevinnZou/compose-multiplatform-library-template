@@ -5,6 +5,7 @@ plugins {
     id("com.android.application").apply(false)
     id("com.android.library").apply(false)
     id("org.jetbrains.compose").apply(false)
-    id("com.vanniktech.maven.publish") version "0.25.3" apply false
+    id("com.vanniktech.maven.publish").apply(false)
     id("org.jetbrains.dokka")
+    id("org.jlleitschuh.gradle.ktlint")
 }
