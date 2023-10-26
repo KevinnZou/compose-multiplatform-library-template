@@ -31,7 +31,7 @@ fun App() {
             AnimatedVisibility(showImage) {
                 Image(
                     painterResource("compose-multiplatform.xml"),
-                    contentDescription = "Compose Multiplatform icon"
+                    contentDescription = "Compose Multiplatform icon",
                 )
             }
         }

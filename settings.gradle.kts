@@ -18,6 +18,8 @@ pluginManagement {
         val agpVersion = extra["agp.version"] as String
         val composeVersion = extra["compose.version"] as String
         val dokkaVersion = extra["dokka.version"] as String
+        val klintVersion = extra["klint.version"] as String
+        val mavenPublishVersion = extra["maven-publish.version"] as String
 
         kotlin("jvm").version(kotlinVersion)
         kotlin("multiplatform").version(kotlinVersion)
@@ -28,6 +30,8 @@ pluginManagement {
 
         id("org.jetbrains.compose").version(composeVersion)
         id("org.jetbrains.dokka").version(dokkaVersion)
+        id("org.jlleitschuh.gradle.ktlint").version(klintVersion)
+        id("com.vanniktech.maven.publish").version(mavenPublishVersion)
     }
 }
 

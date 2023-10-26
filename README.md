@@ -65,6 +65,37 @@ signing.secretKeyRingFile=/Users/yourusername/.gnupg/secring.gpg
 
 Please visit https://vanniktech.github.io/gradle-maven-publish-plugin/central/#configuring-maven-central for detailed instructions.
 
+## KtLint
+
+This template applies the `org.jlleitschuh.gradle.ktlint` plugin to enforce the code style. 
+To check the code style, run the following command:
+```shell
+./gradlew ktlintCheck
+```
+To automatically fix the code style, run the following command:
+```shell
+./gradlew ktlintFormat
+```
+
+This template also setup the git hooks to fix the code style before committing automatically.
+To install the git hooks, run the following command:
+```shell
+./gradlew setUpGitHooks
+```
+Then you can commit the code without worrying about the code style.
+
+## Dokka
+
+This template applies the `org.jetbrains.dokka` plugin to generate documentation for the library code.
+To generate the documentation, run the following command:
+```shell
+./gradlew dokkaHtmlMultiModule
+```
+The documentation will be generated in the `build/dokka/htmlMultiModule` folder.
+
+
+## Set up the environment
+
 > **Note**
 > The iOS part of Compose Multiplatform is in Alpha. It may change incompatibly and require manual migration in the
 > future.
@@ -79,7 +110,6 @@ Compose Multiplatform UI framework.
 
 <img src="readme_images/banner.png" height="350">
 
-## Set up the environment
 
 > **Warning**
 > You need a Mac with macOS to write and run iOS-specific code on simulated or real devices.
