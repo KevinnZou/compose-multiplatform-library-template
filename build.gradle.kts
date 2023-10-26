@@ -18,3 +18,9 @@ subprojects {
         version.set("1.0.1")
     }
 }
+
+tasks.register<Copy>("setUpGitHooks") {
+    group = "help"
+    from("$rootDir/.hooks")
+    into("$rootDir/.git/hooks")
+}
