@@ -6,7 +6,7 @@ if [ -z "$CHANGED_FILES" ]; then
 else
   echo "Running ktlint format over these files:"
   echo "$CHANGED_FILES"
-  if ! (echo "$CHANGED_FILES" | xargs ./tools/ktlint --format --relative .); then
+  if ! (echo "$CHANGED_FILES" | xargs ./tools/ktlint --format --relative); then
     exit $?
   else
     echo "Completed ktlint run."
