@@ -15,7 +15,6 @@ subprojects {
 
     // Optionally configure plugin
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
-        version.set("0.47.0")
-        disabledRules.set(setOf("filename"))
+        version.set("1.0.1")
     }
 }
