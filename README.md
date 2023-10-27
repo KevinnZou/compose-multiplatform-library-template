@@ -103,12 +103,15 @@ Currently, the pipeline is configured to do three things:
 ### Build the project
 The pipeline is triggered on every push to the `main` branch or on every pull request.
 It builds the project and runs the tests.
-The pipeline is defined in `.github/workflows/build.yml`.
+
+The pipeline is defined in [`.github/workflows/build.yml`](https://github.com/KevinnZou/compose-multiplatform-library-template/blob/feature/ci_support/.github/workflows/build.yml).
 
 ### Check the code style
 The pipeline is triggered on every push to the `main` branch or on every pull request.
 It checks the code style and fails if the code style is not correct.
-The pipeline is defined in `.github/workflows/code_style.yml`.
+
+The pipeline is defined in [`.github/workflows/code_style.yml`](https://github.com/KevinnZou/compose-multiplatform-library-template/blob/feature/ci_support/.github/workflows/code_style.yml).
+
 If the code style is not correct, you can run the following command to fix it:
 ```shell
 ./gradlew ktlintFormat
@@ -117,7 +120,8 @@ If the code style is not correct, you can run the following command to fix it:
 ### Publish the documentation
 The pipeline is triggered on every push to the `main` branch or on every pull request.
 It generates the documentation and publishes it to GitHub Pages.
-The pipeline is defined in `.github/workflows/wiki.yml`.
+
+The pipeline is defined in [`.github/workflows/wiki.yml`](https://github.com/KevinnZou/compose-multiplatform-library-template/blob/feature/ci_support/.github/workflows/wiki.yml).
 
 ## Set up the environment
 
