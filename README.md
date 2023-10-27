@@ -10,8 +10,9 @@ and contains the following changes:
 * Add a `lib` module for the shared library code.
 * Move the androidApp, desktopApp, and iosApp modules to the `samples` folder.
 * Apply the `org.jetbrains.dokka` plugin to generate documentation for the library code.
-* Set up a GitHub Action to publish the documentation to GitHub Pages.
 * Apply the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
+* Apply the `org.jlleitschuh.gradle.ktlint` plugin to enforce the code style and set up the git hooks to fix the code style before committing automatically.
+* Set up the CI pipeline to build the project, check the code style, and publish the documentation.
 
 ## Maven Publish
 This template applies the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
@@ -95,6 +96,28 @@ To generate the documentation, run the following command:
 ```
 The documentation will be generated in the `build/dokka/htmlMultiModule` folder.
 
+## CI/CD
+This template uses GitHub Actions to set up a CI/CD pipeline. 
+Currently, the pipeline is configured to do three things:
+
+### Build the project
+The pipeline is triggered on every push to the `main` branch or on every pull request.
+It builds the project and runs the tests.
+The pipeline is defined in `.github/workflows/build.yml`.
+
+### Check the code style
+The pipeline is triggered on every push to the `main` branch or on every pull request.
+It checks the code style and fails if the code style is not correct.
+The pipeline is defined in `.github/workflows/code_style.yml`.
+If the code style is not correct, you can run the following command to fix it:
+```shell
+./gradlew ktlintFormat
+```
+
+### Publish the documentation
+The pipeline is triggered on every push to the `main` branch or on every pull request.
+It generates the documentation and publishes it to GitHub Pages.
+The pipeline is defined in `.github/workflows/wiki.yml`.
 
 ## Set up the environment
 
