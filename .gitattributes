@@ -1,3 +1,4 @@
 sample/** linguist-detectable
 sample/** -linguist-documentation
 sample/**/*.xml -linguist-detectable
+*.kts linguist-language=Kotlin
